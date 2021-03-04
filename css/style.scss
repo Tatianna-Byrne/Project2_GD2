@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  // Standard font size to scale depending on browser settings
+  font-size: 62.5%;
+
+  //   This font cool go brr
+  font-family: "Poppins", sans-serif;
+}
+
+.title-container {
+  position: absolute;
+
+  // Make this container appear on top of all the others
+  z-index: 10;
+
+  // Center the container
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+
+  // Make the items aligned in a column
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-size: 70px;
+    font-weight: 900;
+    color: black;
+  }
+
+  h2 {
+    transform: translateY(-80%);
+    font-size: 23px;
+    font-weight: 700;
+    color: grey;
+  }
+  a {
+    //   Thicken up the link a bit
+    padding: 10px 15px;
+
+    // Make her nice and round
+    border-radius: 15px;
+    background: rgba(189, 189, 189, 0.5);
+    font-size: 23px;
+    font-weight: 900;
+    text-decoration: none;
+    color: dodgerblue;
+    text-transform: uppercase;
+
+    // Nice fade effect on the color
+    transition: 300ms color;
+    &:visited {
+      color: rgb(80, 167, 167);
+    }
+    &:hover {
+      color: rgb(227, 188, 95);
+    }
+  }
+}
+
+.image-container {
+  // Make this container take up full screen height
+  height: 100vh;
+
+  // Have to set this so the "position:absolute" in the other items has an anchor point
+  position: relative;
+  .top,
+  .bottom {
+    //   Align items in a row and center them
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    // Make it take up all of screen width
+    width: 100%;
+
+    // Size image so it's 1/6 of the screen width
+    img {
+      max-width: calc(100% / 6);
+    }
+  }
+  .left,
+  .right {
+    // Align items in a column and center them
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    // Make it take up all of screen height
+    height: 100vh;
+    position: absolute;
+
+    // Size image so it's 1/6 of the screen height
+    img {
+      max-height: calc(100% / 6);
+    }
+  }
+
+  // Align each container to its respective side
+  .top {
+    top: 0;
+  }
+  .bottom {
+    bottom: 0;
+  }
+  .left {
+    left: 0;
+  }
+  .right {
+    right: 0;
+  }
+}
+
+.canvas-page {
+  .gallery-container {
+    margin-bottom:4vh;
+    display:flex;
+    justify-content:center;
+    width: 100%;
+    .gallery{
+      box-shadow:0 0 5px black;
+      padding:1rem;
+      padding-bottom:2.5rem;
+      background:rgb(255, 255, 255);
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      .container {
+        border-radius:15px;
+        // padding:1rem 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        img {
+          border:1px solid black;
+          margin: 0 1rem;
+          max-width: 10vw;
+          display:none;
+        }
+      }
+    }
+  }
+  canvas {
+    border:1px solid black;
+    box-shadow: 0 0 5px black; 
+    position: absolute;
+    z-index: 10;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  header {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    h1 {
+      font-weight: 900;
+      font-size: 3.2rem;
+    }
+    h2 {
+      color: grey;
+    }
+  }
+  .image-container {
+    .left,
+    .right {
+      // Size image so it's 1/6 of the screen height
+      img {
+        max-height: calc(100% / 6);
+        padding: 2rem 0;
+      }
+    }
+  }
+  button {
+    position: absolute;
+    z-index: 10;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid black;
+    padding: 1.2rem 2rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+  }
+}
